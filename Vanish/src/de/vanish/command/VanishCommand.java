@@ -16,15 +16,16 @@ public class VanishCommand implements CommandExecutor {
 			Player player = (Player) sender;
 				if(player.hasPermission("vanish.vanish")) {
 					if(args.length == 0) {
+						if(player.hasPotionEffect(PotionEffectType.INVISIBILITY)) {
+							player.removePotionEffect(PotionEffectType.INVISIBILITY);
+							
+						} else {
+							player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 99999999, 0));
+						}
+							
+						}
 						
-						player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 99999999, 0));
-						
-						player.sendMessage("§cDu befindest dich jetzt im §b§lVanish§c!");
-						player.canSee((Player) PotionEffectType.INVISIBILITY);
-					} else if(args.length == 1) {
-						player.removePotionEffect(PotionEffectType.INVISIBILITY);
-						
-					}
+
 				}
 			
 		}
