@@ -1,0 +1,8 @@
+name: Vanish
+version: 0.1
+author: Tempoo50
+main: de.vanish.main.Vanish
+
+commands:
+   v:
+      description:
